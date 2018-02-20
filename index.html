@@ -74,28 +74,30 @@
 
   $(document).ready(function() {
 
-    $('input[type=radio][name=fontname]').change(function(e) {
-      $('#canvas').css('font-family', e.target.value);
+    var canvasElement = $('#canvas')
+
+    $('input[type=radio][name=fontname]').bind('change', function(e) {
+      canvasElement.css('font-family', e.target.value);
     });
 
-    $('#textcolor').change(function(e) {
-      $('#canvas').css('color', e.target.value);
+    $('#textcolor').bind('input', function(e) {
+      canvasElement.css('color', e.target.value);
     });
 
-    $('#bgcolor').change(function(e) {
-      $('#canvas').css('background-color', e.target.value);
+    $('#bgcolor').bind('input', function(e) {
+      canvasElement.css('background-color', e.target.value);
     });
 
-    $('#textsize').change(function(e) {
-      $('#canvas').css('font-size', e.target.value + "px");
+    $('#textsize').bind('input', function(e) {
+      canvasElement.css('font-size', e.target.value + "px");
     });
 
-    $('#lineheight').change(function(e) {
-      $('#canvas').css('line-height', e.target.value + "px");
+    $('#lineheight').bind('input', function(e) {
+      canvasElement.css('line-height', e.target.value + "px");
     });
 
-    $('#textpadding').change(function(e) {
-      $('#canvas').css('padding', e.target.value + "px");
+    $('#textpadding').bind('input', function(e) {
+      canvasElement.css('padding', e.target.value + "px");
     });
 
   });
